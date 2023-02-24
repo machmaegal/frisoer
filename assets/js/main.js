@@ -109,7 +109,8 @@ function setBarberWorkingHours() {
 
             const workerShiftStart = barber.workStart
             const workerShiftEnd = barber.workEnd
-            const formatOpeningTime = barbers.map(barber => [barber.workStart]).sort().shift().join();
+            const propertyToStr = barbers.map(barber => [barber.workStart]);
+            const formatOpeningTime = propertyToStr.sort().shift().join();
             const storeOpeningTime = new Date('2023-02-14' + formatOpeningTime)
 
             let workStart = new Date('2023-02-14 ' + workerShiftStart)
